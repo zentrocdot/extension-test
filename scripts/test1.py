@@ -127,8 +127,9 @@ class ARDDScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         imgres = self.image_resolution(is_img2img)
                         def update_button(arstr):
-                            btn.ar = ardict[arstr]
-                            return btn.apply(_width, _height)
+                            #btn.ar = ardict[arstr]
+                            ar = ardict[arstr]
+                            return btn.apply(ar, _width, _height)
                         def check_calc(arstr):    
                             retval = "ROUNDED"      
                             ar = ardict[arstr]
