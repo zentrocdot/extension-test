@@ -53,14 +53,12 @@ arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "2.40:1", "2.55:1", "2.66:1", "2.75:1", "2.76:1", "3.2:1",
           "3.55:1", "3.58:1", "3.60:1", "3.95:1"]
 
-my_file = Path("/path/to/file")
-
 # Define the file's name.
 dir = "/data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
-fn = Path(BASE_PATH, "/data/aspect_ratio.txt")
+fn = Path(BASE_PATH, dir)
 print(fn)
 
 if Path(fn).is_file():
