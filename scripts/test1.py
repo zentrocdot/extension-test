@@ -58,7 +58,7 @@ dir = "/data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
-fn = Path(BASE_PATH, dir)
+fn = Path(BASE_PATH) / dir
 print(fn)
 
 if Path(fn).is_file():
