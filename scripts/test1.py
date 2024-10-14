@@ -65,10 +65,10 @@ def read_data():
 # Check if files exist.
 if Path(fn_user).is_file():
     arlist = read_data()
-    _label = '<font color="blue"><small>User defined aspect ratios used.</small></font>'
+    _label = '<small>User defined aspect ratios used.</small>'
 elif Path(fn_data).is_file():
     arlist = read_data()
-    _label = '<font color="blue"><small>Extension defined aspect ratios used.</small></font>'
+    _label = '<small>Extension defined aspect ratios used.</small>'
 
 # Create a dictionary.
 ardict = dict()
