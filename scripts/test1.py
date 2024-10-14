@@ -21,17 +21,22 @@ key.
 # pylint: disable=no-self-use
 # pylint: disable=bad-indentation
 # pylint: disable=unused-variable
+# pylint: disable=too-many-locals
+# pylint: disable=bare-except
 
 # Import the Python modules.
+from pathlib import Path
 import contextlib
 import gradio as gr
 import modules.scripts as scripts
 from modules.ui_components import ToolButton, InputAccordion
-from pathlib import Path
 
 # Define module variables.
 _width = 512
 _height = 512
+
+# Declare array.
+arlist = []
 
 # Define the data paths.
 extension_data_path = "extension_data/aspect_ratio.data"
@@ -47,15 +52,15 @@ fn_user = Path(BASE_PATH, user_data_path)
 # Function read_data()
 def read_data():
     '''Read aspect ratio data.'''
-    arlist = []
+    ar_list = []
     # Open file for reading.
     with open(fn_user) as fn:
         # Read line by line in the file.
         for line in fn:
             data = line.strip()
             if data != "":
-                arlist.append(data)
-    return arlist            
+                ar_list.append(data)
+    return ar_list            
 
 # Check if files exist.
 if Path(fn_user).is_file():
