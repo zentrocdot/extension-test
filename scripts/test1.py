@@ -44,25 +44,23 @@ BASE_PATH = scripts.basedir()
 fn_data = Path(BASE_PATH, extension_data_path)
 fn_user = Path(BASE_PATH, user_data_path)
 
-# Check if files exist.
-if Path(fn_user).is_file():
+def read_data():
+    '''Read aspect ratio data.'''
     arlist = []
     # Open file for reading.
     with open(fn_user) as fn:
         # Read line by line in the file.
         for line in fn:
             data = line.strip()
-            if data not "":
-                arlist.append(data) 
-elif Path(fn_data).is_file():   
-    arlist = []
-    # Open file for reading.
-    with open(fn_data) as fn:
-        # Read line by line in the file.
-        for line in fn:
-            data = line.strip()
-            if data not "":
-                arlist.append(data)      
+            if data != "":
+                arlist.append(data)
+    return arlist            
+
+# Check if files exist.
+if Path(fn_user).is_file():
+    arlist = read_data()
+elif Path(fn_data).is_file():
+    arlist = read_data()    
 
 # Create a dictionary.
 ardict = dict()
