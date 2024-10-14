@@ -46,7 +46,13 @@ fn_user = Path(BASE_PATH, user_data_path)
 
 # Check if files exist.
 if Path(fn_user).is_file():
-    pass
+    arlist = []
+    # Open file for reading.
+    with open(fn_user) as fn:
+        # Read line by line in the file.
+        for line in fn:
+            data = line.strip()      
+            arlist.append(data) 
 elif Path(fn_data).is_file():   
     arlist = []
     # Open file for reading.
