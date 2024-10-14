@@ -66,7 +66,8 @@ if Path(fn).is_file():
     arlist = []
     # Open file for reading.
     with open(fn) as f:      
-        data = f.readlines().strip()
+        data = f.readlines()
+        data = data.strip()      
         arlist.append(data)      
 
 # Create a dictionary.
