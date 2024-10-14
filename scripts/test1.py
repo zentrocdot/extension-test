@@ -53,7 +53,10 @@ _arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "3.55:1", "3.58:1", "3.60:1", "3.95:1"]
 
 # Define the file's name.
-fn = "./data/aspect_ratio.data"
+#fn = "./data/aspect_ratio.data"
+
+BASE_PATH = scripts.basedir()
+fn = Path(BASE_PATH, "/data/aspect_ratios.txt")
 
 arlist = []
 
