@@ -40,7 +40,7 @@ user_data_path = "user_data/aspect_ratio.data"
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
 fn = PurePath(BASE_PATH, data_path)
-fn_user = PurePath(BASE_PATH, data_path)
+fn_user = PurePath(BASE_PATH, user_data_path)
 print(fn)
 
 if Path(fn_user).is_file():
