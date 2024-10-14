@@ -84,9 +84,6 @@ class  ARDDButton(ToolButton):
 
     def apply(self, ar, w, h):
         '''Class method apply.'''
-        # Initialise height and width.
-        #w = _width
-        #h = _height
         # Calculate new width and height.
         if ar > 1.0:  # fixed height, change width
             w = ar * h
@@ -169,7 +166,7 @@ class ARDDScript(scripts.Script):
                             return chg.apply(arval, _width, _height)
                         chg.click(update_chg, inputs=[arval], outputs=imgres)
                 with gr.Row(elem_id=css_row):
-                    gr.Textbox(value=_label)
+                    gr.HTML(value=_label)
                               
     # Class method after_component.
     def after_component(self, component, **kwargs):
