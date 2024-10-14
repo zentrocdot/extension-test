@@ -41,7 +41,7 @@ user_data_path = "user_data/aspect_ratio.data"
 BASE_PATH = scripts.basedir()
 
 # Create the paths.
-fn_data = Path(BASE_PATH, data_path)
+fn_data = Path(BASE_PATH, extension_data_path)
 fn_user = Path(BASE_PATH, user_data_path)
 
 # Check if files exist.
