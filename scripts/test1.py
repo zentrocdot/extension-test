@@ -69,9 +69,12 @@ with open(fn) as f:
 # Create a dictionary.
 ardict = dict()
 for ele in arlist:
-    templist = ele.split(":")
-    fval = float(templist[0]) / float(templist[1])       
-    ardict[str(ele)] = fval 
+    try:      
+        templist = ele.split(":")
+        fval = float(templist[0]) / float(templist[1])       
+        ardict[str(ele)] = fval 
+    except:
+        print("*** Could not parse: " + str(ele))      
 
 # Define class ARDDButton.
 class  ARDDButton(ToolButton):
