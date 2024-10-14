@@ -148,14 +148,14 @@ class ARDDScript(scripts.Script):
                             arval = ardict[arstr]
                             return btn.apply(arval, _width, _height)
                         def check_calc(arstr):    
-                            retval = "ROUNDED"      
+                            retstr = "ROUNDED"      
                             arval = ardict[arstr]
                             x = _width
                             y = x * arval
                             print(x, y)      
                             if float(y).is_integer():
-                                retval = "EXACT"        
-                            return retval          
+                                retstr = "EXACT"        
+                            return retstr          
                         btn.click(update_button, inputs=[arval], outputs=imgres)
                         btn.click(check_calc, inputs=[arval], outputs=exact)      
                         def update_rst0(arstr): 
