@@ -27,7 +27,7 @@ import contextlib
 import gradio as gr
 import modules.scripts as scripts
 from modules.ui_components import ToolButton, InputAccordion
-from pathlib import Path
+from pathlib import Path, PurePath
 
 # Define module variables.
 _width = 512
@@ -58,7 +58,7 @@ dir = "/data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
-fn = Path(BASE_PATH) / dir
+fn = PurePath(BASE_PATH), dir)
 print(fn)
 
 if Path(fn).is_file():
