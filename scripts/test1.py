@@ -2,7 +2,7 @@
 '''sd-webui-aspect_ratios-dd
 Extension for AUTOMATIC1111.
 
-Version 0.0.0.4
+Version 0.0.0.5
 
 Description
 The aspect ratios are given in a list. From this list a dictionary 
@@ -33,7 +33,7 @@ _width = 512
 _height = 512
 
 # Define the list with the aspect ratios.
-arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
+_arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "5:3", "5:4", "6:1", "6:5", "7:1", "7:4", "7:5", "7:5.5",
           "8:3", "8:5", "9:7", "10:1", "10:7", "11:5", "11.85:3", 
           "12:1", "12:5", "12:9", "12:10", "13:6", "13:18", "13:19",
@@ -51,6 +51,16 @@ arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "2.208:1", "2.21:1", "2.35:1", "2.37:1", "2.38:1", "2.39:1",
           "2.40:1", "2.55:1", "2.66:1", "2.75:1", "2.76:1", "3.2:1",
           "3.55:1", "3.58:1", "3.60:1", "3.95:1"]
+
+# Define the file's name.
+fn = "./data/aspect_ratio.data"
+
+arlist = []
+
+# Open the file and read its content.
+with open(fn) as f:      
+    data = f.readlines()
+    arlist.append(data)      
 
 # Create a dictionary.
 ardict = dict()
