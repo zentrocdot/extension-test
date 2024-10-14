@@ -50,9 +50,9 @@ if Path(fn_user).is_file():
 elif Path(fn_data).is_file():   
     arlist = []
     # Open file for reading.
-    with open(fn) as f:
-        # Read each line in the file
-        for line in f:
+    with open(fn_data) as fn:
+        # Read line by line in the file.
+        for line in fn:
             data = line.strip()      
             arlist.append(data)      
 
