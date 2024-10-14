@@ -76,8 +76,8 @@ class  ARDDButton(ToolButton):
     def apply(self, ar, w, h):
         '''Class method apply.'''
         # Initialise height and width.
-        w = _width
-        h = _height
+        #w = _width
+        #h = _height
         # Calculate new width and height.
         if ar > 1.0:  # fixed height, change width
             w = ar * h
@@ -134,14 +134,13 @@ class ARDDScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         imgres = self.image_resolution(is_img2img)
                         def update_button(arstr):
-                            #btn.ar = ardict[arstr]
-                            ar = ardict[arstr]
-                            return btn.apply(ar, _width, _height)
+                            arval = ardict[arstr]
+                            return btn.apply(arval, _width, _height)
                         def check_calc(arstr):    
                             retval = "ROUNDED"      
-                            ar = ardict[arstr]
+                            arval = ardict[arstr]
                             x = _width
-                            y = x * ar
+                            y = x * arval
                             print(x, y)      
                             if float(y).is_integer():
                                 retval = "EXACT"        
@@ -157,8 +156,8 @@ class ARDDScript(scripts.Script):
                         rst.click(update_rst0, inputs=[arval], outputs=imgres)
                         rst.click(update_rst1, inputs=[arval], outputs=[arval])
                         def update_chg(arstr):
-                            ar = 1/ardict[arstr] 
-                            return chg.apply(ar, _width, _height)
+                            arval = 1/ardict[arstr] 
+                            return chg.apply(arval, _width, _height)
                         chg.click(update_chg, inputs=[arval], outputs=imgres)
                               
     # Class method after_component.
