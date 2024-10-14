@@ -53,20 +53,23 @@ arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "2.40:1", "2.55:1", "2.66:1", "2.75:1", "2.76:1", "3.2:1",
           "3.55:1", "3.58:1", "3.60:1", "3.95:1"]
 
+my_file = Path("/path/to/file")
+
 # Define the file's name.
-#fn = "./data/aspect_ratio.data"
+dir = "/data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
 fn = Path(BASE_PATH, "/data/aspect_ratio.txt")
 print(fn)
 
-#arlist = []
-
-# Open the file and read its content.
-#with open(fn) as f:      
-#    data = f.readlines()
-#    arlist.append(data)      
+if Path(fn).is_file():
+    print("Gotcha!")      
+    arlist = []
+    # Open file for reading.
+    with open(fn) as f:      
+        data = f.readlines()
+        arlist.append(data)      
 
 # Create a dictionary.
 ardict = dict()
