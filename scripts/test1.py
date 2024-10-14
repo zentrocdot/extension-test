@@ -65,10 +65,11 @@ if Path(fn).is_file():
     print("Gotcha!")      
     arlist = []
     # Open file for reading.
-    with open(fn) as f:      
-        data = f.readlines()
-        data = data.strip()      
-        arlist.append(data)      
+    with open(fn) as f:
+        # Read each line in the file
+        for line in f:
+            data = line.strip()      
+            arlist.append(data)      
 
 # Create a dictionary.
 ardict = dict()
