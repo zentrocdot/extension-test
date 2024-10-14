@@ -54,11 +54,11 @@ arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "3.55:1", "3.58:1", "3.60:1", "3.95:1"]
 
 # Define the file's name.
-dir = "/data/aspect_ratio.data"
+data_path = "data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
-fn = PurePath(BASE_PATH, dir)
+fn = PurePath(BASE_PATH, datapath)
 print(fn)
 
 if Path(fn).is_file():
