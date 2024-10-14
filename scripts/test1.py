@@ -168,8 +168,8 @@ class ARDDScript(scripts.Script):
                             arval = 1/ardict[arstr] 
                             return chg.apply(arval, _width, _height)
                         chg.click(update_chg, inputs=[arval], outputs=imgres)
-                    with gr.Row(elem_id=css_row):
-                        gr.Label(value=_label)
+                with gr.Row(elem_id=css_row):
+                    gr.Label(value=_label)
                               
     # Class method after_component.
     def after_component(self, component, **kwargs):
