@@ -34,7 +34,7 @@ _width = 512
 _height = 512
 
 # Define the list with the aspect ratios.
-_arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
+arlist = ["1:1", "1.5:1", "2:1", "3:1", "3:2", "4:1", "4:3", "5:1",
           "5:3", "5:4", "6:1", "6:5", "7:1", "7:4", "7:5", "7:5.5",
           "8:3", "8:5", "9:7", "10:1", "10:7", "11:5", "11.85:3", 
           "12:1", "12:5", "12:9", "12:10", "13:6", "13:18", "13:19",
@@ -60,12 +60,12 @@ BASE_PATH = scripts.basedir()
 print(BASE_PATH)
 fn = Path(BASE_PATH, "/data/aspect_ratios.txt")
 
-arlist = []
+#arlist = []
 
 # Open the file and read its content.
-with open(fn) as f:      
-    data = f.readlines()
-    arlist.append(data)      
+#with open(fn) as f:      
+#    data = f.readlines()
+#    arlist.append(data)      
 
 # Create a dictionary.
 ardict = dict()
