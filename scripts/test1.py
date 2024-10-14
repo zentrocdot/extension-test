@@ -51,16 +51,18 @@ if Path(fn_user).is_file():
     with open(fn_user) as fn:
         # Read line by line in the file.
         for line in fn:
-            data = line.strip()      
-            arlist.append(data) 
+            data = line.strip()
+            if data not "":
+                arlist.append(data) 
 elif Path(fn_data).is_file():   
     arlist = []
     # Open file for reading.
     with open(fn_data) as fn:
         # Read line by line in the file.
         for line in fn:
-            data = line.strip()      
-            arlist.append(data)      
+            data = line.strip()
+            if data not "":
+                arlist.append(data)      
 
 # Create a dictionary.
 ardict = dict()
