@@ -44,6 +44,7 @@ BASE_PATH = scripts.basedir()
 fn_data = Path(BASE_PATH, extension_data_path)
 fn_user = Path(BASE_PATH, user_data_path)
 
+# Function read_data()
 def read_data():
     '''Read aspect ratio data.'''
     arlist = []
