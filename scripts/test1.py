@@ -35,13 +35,17 @@ _height = 512
 
 # Define the file's name.
 data_path = "extension_data/aspect_ratio.data"
+user_data_path = "user_data/aspect_ratio.data"
 
 BASE_PATH = scripts.basedir()
 print(BASE_PATH)
 fn = PurePath(BASE_PATH, data_path)
+fn_user = PurePath(BASE_PATH, data_path)
 print(fn)
 
-if Path(fn).is_file():
+if Path(fn_user).is_file():
+    pass
+elif Path(fn).is_file():
     print("Gotcha!")      
     arlist = []
     # Open file for reading.
