@@ -2,7 +2,7 @@
 '''sd-webui-aspect_ratios-dd
 Extension for AUTOMATIC1111.
 
-Version 0.0.0.5
+Version 0.0.0.6
 
 Description
 The aspect ratios are given in a list. From this list a dictionary 
@@ -27,26 +27,27 @@ import contextlib
 import gradio as gr
 import modules.scripts as scripts
 from modules.ui_components import ToolButton, InputAccordion
-from pathlib import Path, PurePath
+from pathlib import Path
 
 # Define module variables.
 _width = 512
 _height = 512
 
-# Define the file's name.
-data_path = "extension_data/aspect_ratio.data"
+# Define the data paths.
+extension_data_path = "extension_data/aspect_ratio.data"
 user_data_path = "user_data/aspect_ratio.data"
 
+# Get the base path.
 BASE_PATH = scripts.basedir()
-print(BASE_PATH)
-fn = PurePath(BASE_PATH, data_path)
-fn_user = PurePath(BASE_PATH, user_data_path)
-print(fn)
 
+# Create the paths.
+fn_data = Path(BASE_PATH, data_path)
+fn_user = Path(BASE_PATH, user_data_path)
+
+# Check if files exist.
 if Path(fn_user).is_file():
     pass
-elif Path(fn).is_file():
-    print("Gotcha!")      
+elif Path(fn_data).is_file():   
     arlist = []
     # Open file for reading.
     with open(fn) as f:
